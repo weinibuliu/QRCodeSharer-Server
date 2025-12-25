@@ -1,0 +1,6 @@
+__pycache__
+.venv*
+.vscode/settings.json
+db.db*
+debug
+.idea*
