@@ -21,13 +21,11 @@ engine = create_engine(
     echo=False,
 )
 
-# 在首次连接时启用WAL模式
 with engine.connect() as conn:
-    conn.exec_driver_sql("PRAGMA journal_mode=WAL")
+    conn.exec_driver_sql("PRAGMA journal_mode=WAL")  # 启用WAL模式
     conn.exec_driver_sql("PRAGMA synchronous=NORMAL")  # 提升写入性能
     conn.exec_driver_sql("PRAGMA busy_timeout=30000")  # 30秒忙等待
     conn.exec_driver_sql("PRAGMA wal_autocheckpoint=1000")  # 每1000页自动checkpoint
-    result = conn.exec_driver_sql("PRAGMA journal_mode").fetchone()
 
 
 def get_session():

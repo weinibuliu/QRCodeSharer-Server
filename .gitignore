@@ -1,6 +1,6 @@
 __pycache__
 .venv*
-.vscode/settings.json
-db.db*
+.vscode
+*.db*
 debug
 .idea*
