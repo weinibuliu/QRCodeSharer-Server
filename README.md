@@ -16,7 +16,6 @@ with engine.connect() as conn:
     conn.exec_driver_sql("PRAGMA synchronous=NORMAL")
     conn.exec_driver_sql("PRAGMA busy_timeout=30000")  # 30秒忙等待
     conn.exec_driver_sql("PRAGMA wal_autocheckpoint=1000")  # 每1000页自动checkpoint
-    result = conn.exec_driver_sql("PRAGMA journal_mode").fetchone()
 ```
 
 ## API 接口
